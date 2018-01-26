@@ -1,0 +1,21 @@
+td,
+th{
+  white-space: nowrap;
+}
+
+table.tblSorter thead tr .tablesorter-header{
+  padding-right: 20px;
+}
+
+tbody tr.even td{
+  background: #F1F9FF;
+}
+
+table.tblSorter tbody td{
+  padding-right: 10px;
+}
+
+.tblResponsive{
+  overflow: hidden;
+  overflow-x: scroll;
+}
