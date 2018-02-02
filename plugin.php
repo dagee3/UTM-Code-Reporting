@@ -3,7 +3,7 @@
 Plugin Name: UTM Code Reporting
 Plugin URI: http://www.firsthandfoundation.org
 Description: A plugin to have a report on UTM codes.
-Version: 1.0
+Version: 1.0.1
 Author: Darrell Agee
 Author URI: https://www.firsthandfoundation.org
 */
@@ -85,10 +85,9 @@ function report_display_page() {
               $keyword = yourls_sanitize_string($table_result->keyword);
               $long_url = stripslashes($table_result->url);
               $title = $table_result->title;
-              $url_pieces = explode("&", $long_url);
-              $source = preg_replace("/\+/", " ", substr($url_pieces[0], strpos($url_pieces[0], $utm_codes[0]) + strlen($utm_codes[0])));
-              $medium = preg_replace("/\+/", " ", substr($url_pieces[1], strpos($url_pieces[1], $utm_codes[1]) + strlen($utm_codes[1])));
-              $campaign = preg_replace("/\+/", " ", substr($url_pieces[2], strpos($url_pieces[2], $utm_codes[2]) + strlen($utm_codes[2])));
+              $source = checkUTMCode($long_url, $utm_codes[0]);
+              $medium = checkUTMCode($long_url, $utm_codes[1]);
+              $campaign = checkUTMCode($long_url, $utm_codes[2]);
               $timestamp = date("M d, Y H:i", strtotime($table_result->timestamp));
               $clicks = $table_result->clicks;
               echo '<tr><td>' . $keyword . '</td>
@@ -119,5 +118,32 @@ function report_display_page() {
       <select class="gotoPage" title="Select page number"></select>
     </div>
   <?php
+}
+
+function checkUTMCode($long_url, $utm_code)
+{
+  if (strpos($long_url, $utm_code) !== false)
+  {
+    $value = returnUTMCode($long_url, $utm_code);
+  } else {
+    $value = '';
+  }
+
+  return $value;
+}
+
+function returnUTMCode($long_url, $utm_code)
+{
+  $querySeperator = '&';
+  $firstPosition = strpos($long_url, $utm_code) + strlen($utm_code);
+  if (strpos($long_url, $querySeperator, $firstPosition) !== false)
+  {
+    $lastPosition = strpos($long_url, $querySeperator, $firstPosition);
+    $value = preg_replace("/\+/", " ", substr($long_url, $firstPosition, $lastPosition - $firstPosition));
+  } else {
+    $value = preg_replace("/\+/", " ", substr($long_url, $firstPosition));
+  }
+
+  return $value;
 }
 ?>
