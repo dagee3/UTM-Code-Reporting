@@ -2,7 +2,7 @@
 /*
 Plugin Name: UTM Code Reporting
 Plugin URI: http://www.firsthandfoundation.org
-Description: A plugin to have a UTM-Code-Reporting on UTM codes.
+Description: A plugin to have a report on UTM codes.
 Version: 1.0.1
 Author: Darrell Agee
 Author URI: https://www.firsthandfoundation.org
