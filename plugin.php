@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Report
+Plugin Name: UTM Code Reporting
 Plugin URI: http://www.firsthandfoundation.org
-Description: A plugin to have a report on UTM codes.
+Description: A plugin to have a UTM-Code-Reporting on UTM codes.
 Version: 1.0.1
 Author: Darrell Agee
 Author URI: https://www.firsthandfoundation.org
@@ -11,7 +11,7 @@ Author URI: https://www.firsthandfoundation.org
 // Register the plugin admin page
 yourls_add_action( 'plugins_loaded', 'report_init' );
 function report_init() {
-    yourls_register_plugin_page( 'report', 'UTM Report', 'report_display_page' );
+    yourls_register_plugin_page( 'UTM-Code-Reporting', 'UTM Report', 'report_display_page' );
 }
 
 // The function that will draw the admin page
@@ -19,18 +19,18 @@ function report_display_page() {
   ?>
     <head>
       <link rel="stylesheet" href="<?php yourls_site_url(); ?>/css/tablesorter.css?v=<?php echo YOURLS_VERSION; ?>" type="text/css" media="screen" />
-      <script src="<?php yourls_site_url(); ?>/user/plugins/report/js/jquery.tablesorter.min.js" type="text/javascript"></script>
-      <script src="<?php yourls_site_url(); ?>/user/plugins/report/js/jquery.tablesorter.widgets.min.js" type="text/javascript"></script>
-      <script src="<?php yourls_site_url(); ?>/user/plugins/report/js/jquery.tablesorter.pager.min.js" type="text/javascript"></script>
-      <script src="<?php yourls_site_url(); ?>/user/plugins/report/js/main.js" type="text/javascript"></script>
-      <link rel="stylesheet" href="<?php yourls_site_url(); ?>/user/plugins/report/css/style.css" type="text/css"/>
+      <script src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/js/jquery.tablesorter.min.js" type="text/javascript"></script>
+      <script src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/js/jquery.tablesorter.widgets.min.js" type="text/javascript"></script>
+      <script src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/js/jquery.tablesorter.pager.min.js" type="text/javascript"></script>
+      <script src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/js/main.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/css/style.css" type="text/css"/>
     </head>
     <div class="pager">
-      <img src="<?php yourls_site_url(); ?>/user/plugins/report/css/images/first.png" class="first"/>
-      <img src="<?php yourls_site_url(); ?>/user/plugins/report/css/images/prev.png" class="prev"/>
+      <img src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/css/images/first.png" class="first"/>
+      <img src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/css/images/prev.png" class="prev"/>
       <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
-      <img src="<?php yourls_site_url(); ?>/user/plugins/report/css/images/next.png" class="next"/>
-      <img src="<?php yourls_site_url(); ?>/user/plugins/report/css/images/last.png" class="last"/>
+      <img src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/css/images/next.png" class="next"/>
+      <img src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/css/images/last.png" class="last"/>
       <select class="pagesize" title="Select page size">
         <option selected="selected" value="10">10</option>
         <option value="25">25</option>
@@ -104,11 +104,11 @@ function report_display_page() {
 
     <br>
     <div class="pager">
-      <img src="<?php yourls_site_url(); ?>/user/plugins/report/css/images/first.png" class="first"/>
-      <img src="<?php yourls_site_url(); ?>/user/plugins/report/css/images/prev.png" class="prev"/>
+      <img src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/css/images/first.png" class="first"/>
+      <img src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/css/images/prev.png" class="prev"/>
       <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
-      <img src="<?php yourls_site_url(); ?>/user/plugins/report/css/images/next.png" class="next"/>
-      <img src="<?php yourls_site_url(); ?>/user/plugins/report/css/images/last.png" class="last"/>
+      <img src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/css/images/next.png" class="next"/>
+      <img src="<?php yourls_site_url(); ?>/user/plugins/UTM-Code-Reporting/css/images/last.png" class="last"/>
       <select class="pagesize" title="Select page size">
         <option selected="selected" value="10">10</option>
         <option value="25">25</option>
